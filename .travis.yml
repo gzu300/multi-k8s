@@ -14,4 +14,11 @@ after_success:
   - docker build -t zguanchen/multi-nginx ./nginx
   - docker build -t zguanchen/multi-server ./server
   - docker build -t zguanchen/multi-worker ./worker
+  # Log in to docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$Docker_ID" --password-stdin
+  # push the images to docker hub
+  - docker push zguanchen/multi-client
+  - docker push zguanchen/multi-nginx
+  - docker push zguanchen/multi-server
+  - docker push zguanchen/multi-worker
 

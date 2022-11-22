@@ -1,0 +1,17 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install: 
+  - docker build -t zguanchen/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true zguanchen/react-test npm run test
+
+after_success: 
+  - docker build -t zguanchen/multi-client ./client
+  - docker build -t zguanchen/multi-nginx ./nginx
+  - docker build -t zguanchen/multi-server ./server
+  - docker build -t zguanchen/multi-worker ./worker
+

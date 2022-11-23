@@ -23,11 +23,11 @@ after_success:
   - docker push zguanchen/multi-./worker
 deploy:
   provider: elasticbeanstalk
-  region: en-central-1
-  app: multi-react
-  env: Multireact-env
-  bucket_name: elasticbeanstalk-eu-central-1-113758841170
-  bucket_path: multi-react
+  region: 'eu-central-1'
+  app: 'multi-react'
+  env: 'Multireact-env'
+  bucket_name: 'elasticbeanstalk-eu-central-1-113758841170'
+  bucket_path: 'multi-react'
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY

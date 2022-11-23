@@ -20,7 +20,7 @@ after_success:
   - docker push zguanchen/multi-client
   - docker push zguanchen/multi-nginx
   - docker push zguanchen/multi-server
-  - docker push zguanchen/multi-./worker
+  - docker push zguanchen/multi-worker
 deploy:
   provider: elasticbeanstalk
   region: 'eu-central-1'

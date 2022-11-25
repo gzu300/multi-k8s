@@ -6,6 +6,8 @@ docker push zguanchen/multi-client
 docker push zguanchen/multi-server
 docker push zguanchen/multi-worker
 
+kubectl apply -f k8s
+
 kubectl rollout restart deployment/client-deployment
 kubectl rollout restart deployment/worker-deployment
 kubectl rollout restart deployment/server-deployment
